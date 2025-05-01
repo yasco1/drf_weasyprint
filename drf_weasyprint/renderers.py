@@ -109,12 +109,12 @@ class WeasyPrintPDFRenderer(BaseRenderer):
         context_name = api_settings.DATA_CONTEXT_NAME
         context.update({context_name: data})
 
-        font_config = api_settings.DEFAULT_WEASYPRINT_FONT_CONFIG
+        FONTCONFIG = api_settings.DEFAULT_WEASYPRINT_FONT_CONFIG
         html = render_to_string(
             template_name=template_name, context=context, request=request
         ).encode(encoding="UTF-8")
         document = HTML(string=html, base_url=request.build_absolute_uri()).render(
-            font_config=font_config
+            font_config=FONTCONFIG()
         )
 
         return self._save_virtual_pdf(document)
