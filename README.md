@@ -1,4 +1,4 @@
-# DRF PDF
+# DRF WEASYPRINT
 
 A Django REST Framework package for generating and serving PDF files in your web applications using weasyprint.
 
@@ -42,7 +42,7 @@ For detailed installation instructions and additional dependencies, refer to the
 
     ```python
     from rest_framework.generics import GenericAPIView
-    from drf_weasyprint.mixins import PDFMixin
+    from drf_weasyprint.mixins import PDFFileMixin
     from drf_weasyprint.renderers import WeasyPrintPDFRenderer
     
 
